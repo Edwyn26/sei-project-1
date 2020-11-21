@@ -32,3 +32,10 @@ body {
   height: 10%;
   width: 10%;
 }
+
+.grid div.gerry {
+  background-image: url('../assets/gerry-lane.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
