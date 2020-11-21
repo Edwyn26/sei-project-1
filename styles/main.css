@@ -39,3 +39,10 @@ body {
   background-size: contain;
   cursor: pointer;
 }
+
+.grid div.zombie {
+  background-image: url('../assets/zombie-face.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* cursor: pointer; */
+}

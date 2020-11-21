@@ -2,6 +2,8 @@
 
 function init() {
 
+  // * Variables
+
   const grid = document.querySelector('.grid')
   
   const width = 10
@@ -10,6 +12,9 @@ function init() {
 
   const gerryClass = 'gerry'
   let gerryPosition = 94
+
+  const zombieClass = 'zombie'
+  const zombies = [1, 2, 3, 5, 6, 7, 11, 12, 13, 15, 16, 17, 21, 22, 23, 25, 26, 27, 31, 32, 33, 35, 36, 37]
 
 
   // * Make a grid
@@ -21,6 +26,7 @@ function init() {
       cells.push(cell)
     }
     addGerry(startingPosition)
+    addZombies(startingPosition)
   }
 
   //* Add Gerry to the grid
@@ -38,9 +44,7 @@ function init() {
     removeGerry(gerryPosition)
   
     const horizontalPosition = gerryPosition % width 
-   
- 
-   
+
     switch (event.keyCode) {
       case 39: //arrow right
         if (horizontalPosition < width - 1) gerryPosition++ 
@@ -51,9 +55,20 @@ function init() {
       default:
         console.log('INVALID KEY')
     }
-
     addGerry(gerryPosition)
   }
+
+  //* Add zombies
+
+  function addZombies() {
+    zombies.forEach(invader => 
+      cells[invader].classList.add(zombieClass))
+  }
+  //addZombies()
+  
+  
+
+
 
   // * Event listeners
   document.addEventListener('keyup', handleKeyUp)
