@@ -33,6 +33,31 @@ function init() {
     cells[position].classList.remove(gerryClass)
   }
 
+  // * Move Gerry
+  function handleKeyUp(event) {
+    removeGerry(gerryPosition)
+  
+    const horizontalPosition = gerryPosition % width 
+   
+ 
+   
+    switch (event.keyCode) {
+      case 39: //arrow right
+        if (horizontalPosition < width - 1) gerryPosition++ 
+        break
+      case 37: //arrow left
+        if (horizontalPosition > 0) gerryPosition-- 
+        break
+      default:
+        console.log('INVALID KEY')
+    }
+
+    addGerry(gerryPosition)
+  }
+
+  // * Event listeners
+  document.addEventListener('keyup', handleKeyUp)
+
 
   createGrid(gerryPosition)
 }
