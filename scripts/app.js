@@ -27,6 +27,7 @@ function init() {
     }
     addGerry(startingPosition)
     addZombies(startingPosition)
+    moveZombies()
   }
 
   //* Add Gerry to the grid
@@ -95,6 +96,19 @@ function init() {
     addZombies()
   }
 
+  function moveZombies() {
+    setInterval(() => {
+      setTimeout(() => {
+        moveZombiesRight()
+      }, 1500)
+      setTimeout(() => {
+        moveZombiesDown()
+      }, 2000)
+      setTimeout(() => {
+        moveZombiesLeft()
+      }, 2500)
+    }, 2000)
+  }
 
 
 
