@@ -97,7 +97,7 @@ function init() {
   }
 
   function moveZombies() {
-    setInterval(() => {
+    const zombieMoveInterval = setInterval(() => {
       setTimeout(() => {
         moveZombiesRight()
       }, 1500)
@@ -107,6 +107,11 @@ function init() {
       setTimeout(() => {
         moveZombiesLeft()
       }, 2500)
+      for (let i = 0; i < zombies.length; i++) {
+        if (zombies[i] >= 68) {
+          clearInterval(zombieMoveInterval)
+        }
+      }
     }, 2000)
   }
 
