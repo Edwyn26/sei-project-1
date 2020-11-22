@@ -66,6 +66,10 @@ function init() {
   }
   //addZombies()
   
+  function removeZombies() {
+    zombies.forEach(invader => 
+      cells[invader].classList.remove(zombieClass))
+  }
   
 
 
