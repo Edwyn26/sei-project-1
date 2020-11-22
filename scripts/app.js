@@ -87,6 +87,14 @@ function init() {
     addZombies()
   }
 
+  function moveZombiesDown() {
+    removeZombies()
+    for (let i = 0; i < zombies.length; i++) {
+      zombies[i] += 10
+    }
+    addZombies()
+  }
+
 
 
 
