@@ -71,6 +71,13 @@ function init() {
       cells[invader].classList.remove(zombieClass))
   }
   
+  function moveZombiesRight() {
+    removeZombies()
+    for (let i = 0; i < zombies.length; i++) {
+      zombies[i] += 1
+    }
+    addZombies()
+  }
 
 
 
