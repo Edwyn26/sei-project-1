@@ -79,6 +79,15 @@ function init() {
     addZombies()
   }
 
+  function moveZombiesLeft() {
+    removeZombies()
+    for (let i = 0; i < zombies.length; i++) {
+      zombies[i] -= 1
+    }
+    addZombies()
+  }
+
+
 
 
   // * Event listeners
