@@ -162,7 +162,7 @@ function init() {
         bulletAvailable = true
         cells[weaponFiredPosition].classList.remove('zombie')
         zombies = zombies.filter(zombie => {
-          return zombie !== (weaponFiredPosition)
+          return zombie !== weaponFiredPosition
         })
         removeBullet()
       } else if (weaponFiredPosition < width) {
