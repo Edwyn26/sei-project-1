@@ -14,9 +14,10 @@ function init() {
   let gerryPosition = 94
 
   const zombieClass = 'zombie'
-  const zombies = [1, 2, 3, 5, 6, 7, 11, 12, 13, 15, 16, 17, 21, 22, 23, 25, 26, 27, 31, 32, 33, 35, 36, 37]
+  let zombies = [1, 2, 3, 5, 6, 7, 11, 12, 13, 15, 16, 17, 21, 22, 23, 25, 26, 27, 31, 32, 33, 35, 36, 37]
+  
 
-  let weaponFired = gerryPosition - width
+  let weaponFiredPosition = gerryPosition - width
   let bulletAvailable = true
 
 
@@ -127,16 +128,16 @@ function init() {
   // * Weapon functions
 
   function addBullet() {
-    cells[weaponFired].classList.add('gerryGunBullet')
+    cells[weaponFiredPosition].classList.add('gerryGunBullet')
   }
   
   function removeBullet() {
-    cells[weaponFired].classList.remove('gerryGunBullet')
+    cells[weaponFiredPosition].classList.remove('gerryGunBullet')
   }
 
   function moveBullet() {
     removeBullet()
-    weaponFired = weaponFired - width
+    weaponFiredPosition = weaponFiredPosition - width
     addBullet()
   }
 
@@ -146,13 +147,27 @@ function init() {
       return 
     }
     bulletAvailable = false
-    weaponFired = gerryPosition - width
+    weaponFiredPosition = gerryPosition - width
     const moveBulletUpwards = true
-    setInterval(() => {
+    const bulletTimerID = setInterval(() => {
       removeBullet()
       if (moveBulletUpwards) {
         moveBullet()
       } else {
+        removeBullet()
+      }
+
+      if (cells[weaponFiredPosition].classList.contains('zombie')) {
+        clearInterval(bulletTimerID)
+        bulletAvailable = true
+        cells[weaponFiredPosition].classList.remove('zombie')
+        zombies = zombies.filter(zombie => {
+          return zombie !== (weaponFiredPosition)
+        })
+        removeBullet()
+      } else if (weaponFiredPosition < width) {
+        clearInterval(bulletTimerID)
+        bulletAvailable = true 
         removeBullet()
       }
     }, 50)
