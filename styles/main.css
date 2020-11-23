@@ -46,3 +46,10 @@ body {
   background-size: contain;
   /* cursor: pointer; */
 }
+
+.grid div.gerryGunBullet {
+  background-image: url('../assets/bullet.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+ }
