@@ -16,7 +16,7 @@ function init() {
   const zombieClass = 'zombie'
   const zombies = [1, 2, 3, 5, 6, 7, 11, 12, 13, 15, 16, 17, 21, 22, 23, 25, 26, 27, 31, 32, 33, 35, 36, 37]
 
-  let weaponFired = gerryPosition - width
+  const weaponFired = gerryPosition - width
 
 
   // * Make a grid
@@ -121,7 +121,7 @@ function init() {
     }, 2000)
   }
 
-// * Weapon functions
+  // * Weapon functions
 
   function addBullet() {
     cells[weaponFired].classList.add('gerryGunBullet')
@@ -133,9 +133,16 @@ function init() {
 
   function moveBullet() {
     removeBullet()
-    weaponFired
+    weaponFired = weaponFired - width
     addBullet()
   }
+
+function gerryFiringWeapon() {
+
+  
+
+
+}
 
 
 
