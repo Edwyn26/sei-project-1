@@ -16,7 +16,10 @@ function init() {
   const zombieClass = 'zombie'
   const zombies = [1, 2, 3, 5, 6, 7, 11, 12, 13, 15, 16, 17, 21, 22, 23, 25, 26, 27, 31, 32, 33, 35, 36, 37]
 
-  const weaponFired = gerryPosition - width
+  let weaponFired = gerryPosition - width
+  let bulletAvailable = true
+
+
 
 
   // * Make a grid
@@ -57,7 +60,7 @@ function init() {
         if (horizontalPosition > 0) gerryPosition-- 
         break
       case 32:
-        
+        gerryFiringWeapon()
         break
       default:
         console.log('INVALID KEY')
@@ -137,12 +140,26 @@ function init() {
     addBullet()
   }
 
-function gerryFiringWeapon() {
+  function gerryFiringWeapon() {
 
-  
+    if (!bulletAvailable) {
+      return 
+    }
+    bulletAvailable = false
+    weaponFired = gerryPosition - width
+    const moveBulletUpwards = true
+    setInterval(() => {
+      removeBullet()
+      if (moveBulletUpwards) {
+        moveBullet()
+      } else {
+        removeBullet()
+      }
+    }, 50)
+  }
 
 
-}
+
 
 
 
