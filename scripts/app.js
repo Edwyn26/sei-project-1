@@ -127,7 +127,9 @@ function init() {
     cells[weaponFired].classList.add('gerryGunBullet')
   }
   
-  
+  function removeBullet() {
+    cells[weaponFired].classList.remove('gerryGunBullet')
+  }
 
 
 
