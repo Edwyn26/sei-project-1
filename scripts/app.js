@@ -30,7 +30,7 @@ function init() {
     addGerry(startingPosition)
     addZombies(startingPosition)
     moveZombies()
-    gerryGunShooting()
+    
   }
 
   //* Add Gerry to the grid
@@ -131,6 +131,11 @@ function init() {
     cells[weaponFired].classList.remove('gerryGunBullet')
   }
 
+  function moveBullet() {
+    removeBullet()
+    weaponFired
+    addBullet()
+  }
 
 
 
