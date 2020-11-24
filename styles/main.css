@@ -15,6 +15,12 @@ body {
   align-items: center;
 }
 
+.grid-wrapper {
+  background-image: url('../assets/wwz-title.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .grid {
   align-items: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
@@ -34,14 +40,14 @@ body {
 }
 
 .grid div.gerry {
-  background-image: url('../assets/gerry-lane.jpg');
+  background-image: url('../assets/gerry-lane-1.png');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
 }
 
 .grid div.zombie {
-  background-image: url('../assets/zombie-face.png');
+  background-image: url('../assets/zombie-face-1.png');
   background-repeat: no-repeat;
   background-size: contain;
   /* cursor: pointer; */
