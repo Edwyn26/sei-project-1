@@ -7,6 +7,7 @@ function init() {
   const grid = document.querySelector('.grid')
   const startButton = document.querySelector('#start')
   const scoreDisplay = document.querySelector('#score-display')
+  const timeRemaining = document.querySelector('#time-remaining')
   
   const width = 10
   const cellCount = width * width
@@ -24,6 +25,7 @@ function init() {
   let weaponFiredPosition = gerryPosition - width
   let bulletAvailable = true
 
+  let timerID = null
 
 
 
@@ -110,13 +112,8 @@ function init() {
     addZombies()
   }
 
-  function delayZombieMove() {
-    setTimeout(() => {
-      moveZombies()
-    }, 10000)
-  }
-
   function moveZombies() {
+    countdownTimer()
     const zombieMoveInterval = setInterval(() => {
       setTimeout(() => {
         moveZombiesRight()
@@ -189,13 +186,29 @@ function init() {
   }
 
 
+  //* Timer 
+
+  function countdownTimer() {
+    let countdownTimerID = null
+    let count = 21
+    countdownTimerID = setInterval(() => {
+      count --
+      if (count < 0) {
+        clearInterval(countdownTimerID)
+      } else {
+        timeRemaining.innerHTML = count
+      }  
+    }, 1000)
+    
+  }
+
 
 
 
   //*  Start button
-  function handleStartButton() {
-    delayZombieMove()
-  }
+  // function handleStartButton() {
+  //   
+  // }
 
 
 
@@ -205,7 +218,7 @@ function init() {
   // * Event listeners
   document.addEventListener('keyup', handleKeyUp)
   
-  startButton.addEventListener('click', handleStartButton)
+  startButton.addEventListener('click', moveZombies)
   
 
   createGrid(gerryPosition)
