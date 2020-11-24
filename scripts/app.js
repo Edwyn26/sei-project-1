@@ -27,7 +27,7 @@ function init() {
   function createGrid(startingPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      cell.textContent = i
+      //cell.textContent = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -118,7 +118,7 @@ function init() {
         moveZombiesLeft()
       }, 2500)
       for (let i = 0; i < zombies.length; i++) {
-        if (zombies[i] >= 68) {
+        if (zombies[i] >= 60) {
           clearInterval(zombieMoveInterval)
         }
       }
