@@ -6,10 +6,13 @@ function init() {
 
   const grid = document.querySelector('.grid')
   const startButton = document.querySelector('#start')
+  const scoreDisplay = document.querySelector('#score-display')
   
   const width = 10
   const cellCount = width * width
   const cells = []
+
+  let score = 0
 
   const gerryClass = 'gerry'
   let gerryPosition = 94
@@ -175,6 +178,8 @@ function init() {
           return zombie !== weaponFiredPosition
         })
         removeBullet()
+        score += 1000
+        scoreDisplay.innerHTML = score
       } else if (weaponFiredPosition < width) {
         clearInterval(bulletTimerID)
         bulletAvailable = true 
