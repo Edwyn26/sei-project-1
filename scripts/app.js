@@ -107,6 +107,12 @@ function init() {
     addZombies()
   }
 
+  function delayZombieMove() {
+    setTimeout(() => {
+      moveZombies()
+    }, 10000)
+  }
+
   function moveZombies() {
     const zombieMoveInterval = setInterval(() => {
       setTimeout(() => {
@@ -125,6 +131,9 @@ function init() {
       }
     }, 2000)
   }
+
+
+
 
   // * Weapon functions
 
@@ -175,9 +184,12 @@ function init() {
   }
 
 
+
+
+
   //*  Start button
   function handleStartButton() {
-    
+    delayZombieMove()
   }
 
 
@@ -188,7 +200,8 @@ function init() {
   // * Event listeners
   document.addEventListener('keyup', handleKeyUp)
   
-  document.addEventListener('click', handleStartButton)
+  startButton.addEventListener('click', handleStartButton)
+  
 
   createGrid(gerryPosition)
 }
