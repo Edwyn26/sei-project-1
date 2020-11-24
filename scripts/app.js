@@ -27,6 +27,8 @@ function init() {
 
   let timerID = null
 
+  let timer
+
 
 
   // * Make a grid
@@ -39,7 +41,7 @@ function init() {
     }
     addGerry(startingPosition)
     addZombies(startingPosition)
-    moveZombies()
+    //moveZombies()
     
   }
 
@@ -206,9 +208,11 @@ function init() {
 
 
   //*  Start button
-  // function handleStartButton() {
-  //   
-  // }
+  function handleStartButton() {
+    timer = setInterval(() => {
+      moveZombies()
+    }, 1000)
+  }
 
 
 
@@ -218,7 +222,7 @@ function init() {
   // * Event listeners
   document.addEventListener('keyup', handleKeyUp)
   
-  startButton.addEventListener('click', moveZombies)
+  startButton.addEventListener('click', handleStartButton)
   
 
   createGrid(gerryPosition)
