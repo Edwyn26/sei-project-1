@@ -5,6 +5,7 @@ function init() {
   // * Variables
 
   const grid = document.querySelector('.grid')
+  const startButton = document.querySelector('#start')
   
   const width = 10
   const cellCount = width * width
@@ -174,6 +175,11 @@ function init() {
   }
 
 
+  //*  Start button
+  function handleStartButton() {
+    
+  }
+
 
 
 
@@ -181,7 +187,8 @@ function init() {
 
   // * Event listeners
   document.addEventListener('keyup', handleKeyUp)
-
+  
+  document.addEventListener('click', handleStartButton)
 
   createGrid(gerryPosition)
 }
