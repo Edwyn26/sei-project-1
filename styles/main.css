@@ -47,7 +47,7 @@ body {
 }
 
 .grid div.zombie {
-  background-image: url('../assets/zombie-face-1.png');
+  background-image: url('../assets/zombie-2.png');
   background-repeat: no-repeat;
   background-size: contain;
   /* cursor: pointer; */
