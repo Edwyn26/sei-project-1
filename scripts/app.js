@@ -25,7 +25,7 @@ function init() {
   let weaponFiredPosition = gerryPosition - width
   let bulletAvailable = true
 
-  let timerID = null
+  const timerID = null
 
   let timer
 
@@ -35,7 +35,7 @@ function init() {
   function createGrid(startingPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      //cell.textContent = i
+      cell.textContent = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -126,11 +126,11 @@ function init() {
       setTimeout(() => {
         moveZombiesLeft()
       }, 2500)
-      for (let i = 0; i < zombies.length; i++) {
-        if (zombies[i] >= 60) {
-          clearInterval(zombieMoveInterval)
-        }
+      //for (let i = 0; i < zombies.length; i++) {
+      if (zombies === 24) {
+        clearInterval(zombieMoveInterval)
       }
+      // }
     }, 2000)
   }
 
@@ -192,7 +192,7 @@ function init() {
 
   function countdownTimer() {
     let countdownTimerID = null
-    let count = 21
+    let count = 22
     countdownTimerID = setInterval(() => {
       count --
       if (count < 0) {
@@ -209,9 +209,9 @@ function init() {
 
   //*  Start button
   function handleStartButton() {
-    timer = setInterval(() => {
-      moveZombies()
-    }, 1000)
+    // timer = setInterval(() => {
+    moveZombies()
+    // }, 1000)
   }
 
 
