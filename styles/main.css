@@ -7,7 +7,6 @@ body {
   margin: 0;
 }
 
-
 .grid-wrapper {
   height: 91vh;
   display: flex;
@@ -16,7 +15,12 @@ body {
   background-image: url('../assets/wwz-title.png');
   background-repeat: no-repeat;
   background-size: contain;
+  background-color: black;
 }
+
+/* .classic-space-invaders {
+  background-image: url('../assets/press-start.jpg');
+} */
 
 .grid {
   align-items: center;
@@ -30,7 +34,7 @@ body {
 }
 
 .grid div {
-  border: 1px solid lightgrey;
+  /* border: 1px solid lightgrey; */
   flex-grow: 1;
   height: 10%;
   width: 10%;
@@ -55,4 +59,9 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+ }
+
+ .controls-wrapper {
+   display: flex;
+   justify-content: space-between;
  }
