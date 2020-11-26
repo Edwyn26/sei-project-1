@@ -282,6 +282,8 @@ function init() {
   //*  Start button
   function handleStartButton() {
     // timer = setInterval(() => {
+    console.log('happend')
+    startButton.blur()
     moveZombies()
     // }, 1000)
   }
