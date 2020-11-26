@@ -8,6 +8,7 @@ function init() {
   const startButton = document.querySelector('#start')
   const scoreDisplay = document.querySelector('#score-display')
   const timeRemaining = document.querySelector('#time-remaining')
+  const restartButton = document.querySelector('#restart')
   
   const width = 10
   const cellCount = width * width
@@ -30,14 +31,13 @@ function init() {
   let numOfMoves = 0
 
   let timer
-  //let playing = false
-  //let alienArray = zombies.slice()
+  
 
   // * Make a grid
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      cell.textContent = i
+      //cell.textContent = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -224,38 +224,7 @@ function init() {
     }, 25)
   }
 
-  // let bulletPos = gerryPosition
 
-  // const bulletId = setInterval(() => {
-
-  //   if (!playing) {
-  //     clearInterval(bulletId)
-  //   }
-      
-  //   if (bulletPos - width >= 0) {
-  // cells[bulletPos].classList.remove('gerryGunBullet')
-
-  //   bulletPos -= width
-  //   cells[bulletPos].classList.add('gerryGunBullet')
-  // } else {
-  //   cells[bulletPos].classList.remove('gerryGunBullet')
-  // }
-
-  // if (cells[bulletPos].classList.contains('zombie')) {
-  //   clearInterval(bulletId)
-  //   cells[bulletPos].classList.remove('gerryGunBullet')
-        
-  //   const alienPos = alienArray.indexOf(bulletPos)
-  //   alienArray.splice(alienPos, 1)
-  //   cells[bulletPos].classList.remove('zombie')
-  // }
-
-  // if (alienArray.length === 0) {
-  // clearInterval(moveAliensId)
-  // clearInterval(dropBombsId)
-  // clearInterval(bulletId)
-  // win()
-  // })
 
 
 
@@ -276,6 +245,9 @@ function init() {
     
   }
 
+  function handleRestartButton() {
+    window.location.reload()
+  }
 
 
 
@@ -297,7 +269,7 @@ function init() {
   document.addEventListener('keyup', handleKeyUp)
   
   startButton.addEventListener('click', handleStartButton)
-  
+  restartButton.addEventListener('click', handleRestartButton)
 
   //createGrid(gerryPosition)
 }
