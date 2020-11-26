@@ -42,7 +42,7 @@ function init() {
       cells.push(cell)
     }
     //addGerry()
-   //addZombies()
+    //addZombies()
     //moveZombies()
     
   }
@@ -197,6 +197,8 @@ function init() {
     weaponFiredPosition = gerryPosition - width
     const moveBulletUpwards = true
     const bulletTimerID = setInterval(() => {
+      console.log(bulletTimerID)
+      console.log(moveBulletUpwards)
       removeBullet()
       if (moveBulletUpwards) {
         moveBullet()
@@ -219,15 +221,50 @@ function init() {
         bulletAvailable = true 
         removeBullet()
       }
-    }, 50)
+    }, 25)
   }
+
+  // let bulletPos = gerryPosition
+
+  // const bulletId = setInterval(() => {
+
+  //   if (!playing) {
+  //     clearInterval(bulletId)
+  //   }
+      
+  //   if (bulletPos - width >= 0) {
+  //cells[bulletPos].classList.remove('gerryGunBullet')
+
+  //   bulletPos -= width
+  //   cells[bulletPos].classList.add('gerryGunBullet')
+  // } else {
+  //   cells[bulletPos].classList.remove('gerryGunBullet')
+  // }
+
+  // if (cells[bulletPos].classList.contains('zombie')) {
+  //   clearInterval(bulletId)
+  //   cells[bulletPos].classList.remove('gerryGunBullet')
+        
+  //   const alienPos = alienArray.indexOf(bulletPos)
+  //   alienArray.splice(alienPos, 1)
+  //   cells[bulletPos].classList.remove('zombie')
+  // }
+
+  // if (alienArray.length === 0) {
+  //clearInterval(moveAliensId)
+  // clearInterval(dropBombsId)
+  // clearInterval(bulletId)
+  // win()
+  // })
+
+
 
 
   //* Timer 
 
   function countdownTimer() {
     let countdownTimerID = null
-    let count = 21
+    let count = 31
     countdownTimerID = setInterval(() => {
       count --
       if (count <= 0) {
