@@ -233,7 +233,7 @@ function init() {
 
   function countdownTimer() {
     let countdownTimerID = null
-    let count = 31
+    let count = 21
     countdownTimerID = setInterval(() => {
       count --
       if (count <= 0) {
@@ -241,7 +241,7 @@ function init() {
       } else {
         timeRemaining.innerHTML = count
       }  
-    }, 500)
+    }, 750)
     
   }
 
