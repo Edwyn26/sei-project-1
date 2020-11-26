@@ -30,8 +30,8 @@ function init() {
   let numOfMoves = 0
 
   let timer
-
-
+  //let playing = false
+  //let alienArray = zombies.slice()
 
   // * Make a grid
   function createGrid() {
