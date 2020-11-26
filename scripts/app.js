@@ -211,7 +211,7 @@ function init() {
         bulletAvailable = true
         cells[weaponFiredPosition].classList.remove('zombie')
         zombies = zombies.filter(zombie => {
-          return zombie !== weaponFiredPosition
+          return zombie !== (weaponFiredPosition - zombiePosition)
         })
         removeBullet()
         score += 1000
@@ -233,7 +233,7 @@ function init() {
   //   }
       
   //   if (bulletPos - width >= 0) {
-  //cells[bulletPos].classList.remove('gerryGunBullet')
+  // cells[bulletPos].classList.remove('gerryGunBullet')
 
   //   bulletPos -= width
   //   cells[bulletPos].classList.add('gerryGunBullet')
@@ -251,7 +251,7 @@ function init() {
   // }
 
   // if (alienArray.length === 0) {
-  //clearInterval(moveAliensId)
+  // clearInterval(moveAliensId)
   // clearInterval(dropBombsId)
   // clearInterval(bulletId)
   // win()
