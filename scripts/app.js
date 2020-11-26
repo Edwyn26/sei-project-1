@@ -10,6 +10,10 @@ function init() {
   const timeRemaining = document.querySelector('#time-remaining')
   const restartButton = document.querySelector('#restart')
   
+  const wwzSound = document.querySelector('#wwz-theme-song')
+
+  const wwzAudio = document.querySelector('#wwz-theme-song')
+
   const width = 10
   const cellCount = width * width
   const cells = []
@@ -224,7 +228,11 @@ function init() {
     }, 25)
   }
 
-
+  function handleWwzSound() {
+    wwzAudio.src = 
+    './sound/world-war-z-theme-song.mp3'
+    wwzAudio.play()
+  }
 
 
 
@@ -257,6 +265,7 @@ function init() {
     console.log('happend')
     startButton.blur()
     moveZombies()
+    handleWwzSound()
     // }, 1000)
   }
 
@@ -270,6 +279,7 @@ function init() {
   
   startButton.addEventListener('click', handleStartButton)
   restartButton.addEventListener('click', handleRestartButton)
+  wwzSound.addEventListener('click', handleStartButton)
 
   //createGrid(gerryPosition)
 }
