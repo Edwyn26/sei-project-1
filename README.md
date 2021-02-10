@@ -15,6 +15,11 @@ The game is hosted with GitHub Pages and is available [here](https://edwyn26.git
 
 ## Process
 
+I began the process by creating a plan out on paper of all the functionality the game will need to have. After which I created the grid to display the game on in JavaScript. 
+
+* I created a function below that allows the player to move within the boundary of the grid and refrain from moving up or down.
+* The player movement was delivered by a key up event listener, in a series of switch statements, to move with the left and right arrow keys, along with a space bar to fire. 
+
 ```javascript
 // PLAYER MOVEMENT LOGIC -----------------------------------------
 
@@ -37,7 +42,7 @@ The game is hosted with GitHub Pages and is available [here](https://edwyn26.git
     addGerry(gerryPosition)
   }
 ```
-
+* After creating the player functionality, the zombie invader movement was made with a timer and cleared the zombies when time was up.
 
 ```javascript
 // ZOMBIE INVADER MOVEMENT LOGIC ---------------------------------
