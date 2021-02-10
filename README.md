@@ -16,7 +16,7 @@ The game is hosted with GitHub Pages and is available [here](https://edwyn26.git
 ## Process
 
 ```javascript
-// PLAYER MOVEMENT LOGIC ---------------------------------
+// PLAYER MOVEMENT LOGIC -----------------------------------------
 
  function handleKeyUp(event) {
     removeGerry(gerryPosition)
