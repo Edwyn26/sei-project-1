@@ -1,5 +1,3 @@
-
-
 function init() {
 
   // * Variables
@@ -34,23 +32,21 @@ function init() {
   let timerID = null
   let numOfMoves = 0
 
-  let timer
+  //let timer
+
   
 
   // * Make a grid
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      //cell.textContent = i
       grid.appendChild(cell)
       cells.push(cell)
     }
-    //addGerry()
-    //addZombies()
-    //moveZombies()
-    
   }
   createGrid()
+
+
 
   //* Add Gerry to the grid
   function addGerry() {
@@ -58,10 +54,14 @@ function init() {
   }
   addGerry()
 
+
+
   //* Remove Gerry from the grid
   function removeGerry() {
     cells[gerryPosition].classList.remove(gerryClass)
   }
+
+
 
   // * Move Gerry
   function handleKeyUp(event) {
@@ -97,34 +97,26 @@ function init() {
     zombies.forEach(invader => 
       cells[zombiePosition + invader].classList.remove(zombieClass))
   }
-  //removeZombies()
+  
   
   function moveZombiesRight() {
     removeZombies()
     zombiePosition = zombiePosition + 1
-    // for (let i = 0; i < zombies.length; i++) {
-    //   zombies[i] += 1
-    // }
     addZombies()
   }
 
   function moveZombiesLeft() {
     removeZombies()
     zombiePosition = zombiePosition - 1
-    // for (let i = 0; i < zombies.length; i++) {
-    //   zombies[i] -= 1
-    // }
     addZombies()
   }
 
   function moveZombiesDown() {
     removeZombies()
     zombiePosition = zombiePosition + 10
-    // for (let i = 0; i < zombies.length; i++) {
-    //   zombies[i] += 10
-    // }
     addZombies()
   }
+
 
   function moveZombies(countdownTimerID) {
     countdownTimer()
@@ -142,7 +134,7 @@ function init() {
         zombieMovingRight = !zombieMovingRight
         moveZombiesDown()
       }
-      //for (let i = 0; i < zombies.length; i++) {
+      
       console.log(zombiePosition)
       if (zombiePosition === 40) {
         console.log('hello')
@@ -150,31 +142,8 @@ function init() {
         clearInterval(timerID)
         clearInterval(countdownTimerID)
       }
-      // }
     }, 2000)
-    // timerID = setInterval(() => {
-    //   setTimeout(() => {
-    //     moveZombiesRight()
-    //   }, 1500)
-    //   setTimeout(() => {
-    //     moveZombiesDown()
-    //   }, 2000)
-    //   setTimeout(() => {
-    //     moveZombiesLeft()
-    //   }, 2500)
-    //   //for (let i = 0; i < zombies.length; i++) {
-    //   if (zombiePosition === 24) {
-    //     removeZombies()
-    //     clearInterval(timerID)
-    //     clearInterval(countdownTimerID)
-    //     //removeZombies()
-    //   }
-    //   // }
-    // }, 1000)
   }
-
-
-
 
   // * Weapon functions
 
@@ -235,8 +204,6 @@ function init() {
   }
 
 
-
-
   //* Timer 
 
   function countdownTimer() {
@@ -253,25 +220,19 @@ function init() {
     
   }
 
+
   function handleRestartButton() {
     window.location.reload()
   }
 
 
-
   //*  Start button
   function handleStartButton() {
-    // timer = setInterval(() => {
     console.log('happend')
     startButton.blur()
     moveZombies()
     handleWwzSound()
-    // }, 1000)
   }
-
-
-
-
 
 
   // * Event listeners
@@ -281,7 +242,7 @@ function init() {
   restartButton.addEventListener('click', handleRestartButton)
   wwzSound.addEventListener('click', handleStartButton)
 
-  //createGrid(gerryPosition)
+
 }
 
 window.addEventListener('DOMContentLoaded', init)
