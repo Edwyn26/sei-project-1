@@ -66,9 +66,13 @@ I began the process by creating a plan out on paper of all the functionality the
 ```
 
 ## Challenges
-
+* The main challenge was developing the invaders to move across and down the grid. I had many issues with the zombies not moving as accord but the time it took in this phase to reach the MVP stage proved to be worth it and the challenge was an obstacle that I overcame.
 
 ## Key Learnings
-
+* The main challenge I found myself in was, as it was my first project I felt an immense pressure on delivering the project on time. However, by breaking the steps down to develop the functionality of the game proved to be an effective method to building and managing my time of the game. This kept any worries I had at ease and successfully completed the project myself, despite learning JavaScript, HTML and CSS in three weeks. The experience taught me that I can trust my abilities to learn to deliver on my code despite any normal worries at the start of a project.
+* Also, I enjoyed the styling portion of the game and boosted my self abilities by packaging the game in a simple yet stylish product.
 
 ## Future Features
+* I would like to add the zombie invaders to fire back at the player and maybe introduce some blockers to emmulate the classic space invaders game.
+* Also, adding the feature of separate pages such as a start and score page when the game is finished will add a personal touch for the user experience.
+* Lastly, a feature for the user to choose what difficulty level they would like play on will be a nice touch too.
